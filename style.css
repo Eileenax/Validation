@@ -10,30 +10,189 @@
   align-items: center;
   margin-bottom: 10px;
   gap: 1rem;
-
 }
 /* Fondo y fuente general */
 body {
   margin: 0;
-  padding: 0;
- /* background-image: url('background/background.jpg'); /* Cambia la ruta según tu carpeta */
-  background-size: cover;                   /* Escala la imagen para cubrir toda la pantalla */
-  background-position: center center;       /* Centra la imagen */
-  background-repeat: no-repeat;             /* Evita que se repita */
-  min-height: 100vh;                        /* Asegura que cubra toda la altura */
-  font-family: 'arial', sans-serif;
+  padding: 1rem;
+  display: flex
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  background-image: url(multimedia/6155358.jpg); /* Cambia la ruta según tu carpeta */
+  background-size: cover; /* Escala la imagen para cubrir toda la pantalla */
+  background-position: center center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que se repita */
+  min-height: 100vh; /* Asegura que cubra toda la altura */
+  font-family: "arial", sans-serif;
 }
 
 /* Capa oscura para mejorar legibilidad */
 body::before {
   content: "";
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen */
   z-index: -1;
 }
 
+
+/* Estilo para el formulario */
+#form {
+background-color: rgba(15, 18, 25, 0.6);
+  backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column; 
+    gap: 1rem;
+    border-radius: 0.5rem; 
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    margin: 3rem auto;
+  }
+  
+  /* Formulario */
+  form {
+    /*background-color: #fff;*/
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  /* Título */
+  #form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 1.8em;
+    margin: 0;
+  }
+  
+  /* Contenedores de entrada */
+  .input-div {
+    margin-bottom: 15px;
+    display : flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form-input {
+   outline: none;
+   border: none;
+   border-radius: 0.5rem;
+    padding: 0.75rem;
+    color : #f8fafc;
+    background-color: #475569;
+  }
+
+  .form-input::placeholder {
+    color: #cbd5e1;
+  }
+  
+  /* Inputs y select */
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  margin-top: 5px;
+}
+
+/* Etiquetas y mensajes */
+.informacion {
+  margin: 0;
+  font-size: 0.85em;
+  color: #f8fafc;
+  margin-top: 5px;
+  display: none;
+}
+
+#phone-code {
+  color: #f8fafc;
+  background-color: #475569;
+  border-radius: 0.5rem;
+  padding: 0.65rem;
+}
+
+#phone-container  {
+  display: flex;
+  gap: 0.5rem;
+}
+
+
+
+/* Botón */
+#form-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #8a2be2;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.5), 
+                0 0 20px rgba(138, 43, 226, 0.3),
+                inset 0 0 10px rgba(255, 255, 255, 0.2); 
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#form-btn:hover {
+  background-color: #9370db;
+ box-shadow: 0 0 15px rgba(138, 43, 226, 0.7), 
+                0 0 30px rgba(138, 43, 226, 0.5);
+}
+
+#form-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  /* background-color: #0056b3; */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  form {
+    padding: 20px;
+  }
+  
+  #form-title {
+    font-size: 1.5em;
+  }
+  
+  input,
+  select {
+    font-size: 0.95em;
+  }
+}
+
+/*CORRECTOR*/
+.correct {
+  outline: 4px solid green;
+}
+
+.incorrect {
+  outline: 2px solid red;
+}
+
+.show-information {
+  display: block;
+}
+
+footer {
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
 @media (max-width: 768px) {
   #form {
     padding: 1.5rem;
@@ -43,122 +202,4 @@ body::before {
   body {
     background-position: top center;
   }
-}
-
-
-/* Estilo para el formulario */
-#form {
-  background-color:  rgba(199, 134, 235, 0.799); /* Fondo blanco semitransparente */
-  padding: 2rem;
-  border-radius: 10px;
-  max-width: 500px;
-  margin: 3rem auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-/* Formulario */
-form {
-  background-color: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 500px;
-}
-
-/* Título */
-#form-title {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #ffffff;
-  font-size: 1.8em;
-}
-
-/* Contenedores de entrada */
-.input-div {
-  margin-bottom: 15px;
-}
-
-/* Inputs y select */
-input, select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1em;
-  margin-top: 5px;
-}
-
-/* Etiquetas y mensajes */
-.informacion{
-  font-size: 0.85em;
-  color: #666;
-  margin-top: 5px;
-  display: none;
-}
-
-/* Código de teléfono */
-#phone\ code {
-  display: inline-block;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-/* Botón */
-#form-btn {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 1em;
-  cursor: pointer;
-  /* transition: background-color 0.3s ease; */
-}
-
-#form-btn:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-  /* background-color: #0056b3; */
-}
-
-
-
-
-/* Responsive */
-@media (max-width: 600px) {
-  form {
-    padding: 20px;
-  }
-
-  #form-title {
-    font-size: 1.5em;
-  }
-
-  input, select {
-    font-size: 0.95em;
-  }
-}
-
-/*CORRECTOR*/
-.correct{
-
-  outline:4px solid green;
-}
-
-.incorrect{
-
-  outline: 2px solid red;
-}
-
-.show-information{
-  display: block;
-}
-
-footer {
-  background-color: transparent;
-  color: white;
-  text-align: center;
-  padding: 20px;
 }
